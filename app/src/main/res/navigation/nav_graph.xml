@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/LoginFragment">
+
+    <fragment
+        android:id="@+id/LoginFragment"
+        android:name="com.wicare.review_app.LoginFragment"
+        android:label="@string/login_label"
+        tools:layout="@layout/fragment_login">
+
+        <action
+            android:id="@+id/action_LoginFragment_to_RegisterFragment"
+            app:destination="@id/RegisterFragment" />
+        <action
+            android:id="@+id/action_LoginFragment_to_ReviewFragment"
+            app:destination="@id/ReviewFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/RegisterFragment"
+        android:name="com.wicare.review_app.RegisterFragment"
+        android:label="@string/register_label"
+        tools:layout="@layout/fragment_register">
+
+        <action
+            android:id="@+id/action_RegisterFragment_to_LoginFragment"
+            app:destination="@id/LoginFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ReviewFragment"
+        android:name="com.wicare.review_app.ReviewFragment"
+        android:label="@string/all_review_label"
+        tools:layout="@layout/fragment_review">
+
+        <action
+            android:id="@+id/action_ReviewFragment_to_CreateReviewFragment"
+            app:destination="@id/CreateReviewFragment" />
+
+        <action
+            android:id="@+id/action_ReviewFragment_to_UpdateReviewFragment"
+            app:destination="@id/UpdateReviewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/CreateReviewFragment"
+        android:name="com.wicare.review_app.CreateReviewFragment"
+        android:label="Create Review"
+        tools:layout="@layout/fragment_create_review">
+
+        <action
+            android:id="@+id/action_CreateReviewFragment_to_ReviewFragment"
+            app:destination="@id/ReviewFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/UpdateReviewFragment"
+        android:name="com.wicare.review_app.UpdateReviewFragment"
+        android:label="Update Review"
+        tools:layout="@layout/fragment_update_review">
+
+        <action
+            android:id="@+id/action_UpdateReviewFragment_to_ReviewFragment"
+            app:destination="@id/ReviewFragment" />
+    </fragment>
+</navigation>
